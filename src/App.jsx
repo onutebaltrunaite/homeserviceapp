@@ -1,29 +1,30 @@
 import React from 'react';
-import './App.css'
+import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
 import SearchBar from './components/SearchBar/SearchBar.jsx';
 import CategoryCard from './components/CategoryCard/CategoryCard.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs'; 
+import Services from './pages/Services';
 
 function App() {
-
-
   const handleSearch = (query) => {
     console.log('Search query:', query);
-    // Implement search functionality here
   };
 
-
   return (
-    
-      <>
-      <div> <NavBar /> </div>
-      <div><SearchBar onSearch={handleSearch} /></div>
-      <div>Layout'as</div>
-      <div><CategoryCard/> </div>
-      
-      
-      </>
-  )
+    <Router>
+      <div>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home handleSearch={handleSearch} />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/services" element={<Services />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
