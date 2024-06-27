@@ -8,24 +8,29 @@
     color: white;
 }
 
-.navbar-logo {
+.navbarLogo {
 
     font-size: 1.5rem;
     margin-bottom: 1rem; 
 }
 
-.navbar-links {
-    display: flex;
+.navbarLinks {
+    /* display: flex; */
     margin-left: 10px;
     
 }
 
-.navbar-links a {
+.navbarLinks a {
     color: white;
     text-decoration: none;
     margin: 10px;
 }
 
-.navbar-links a:hover {
+.navbarLinks a:hover {
     text-decoration: underline;
+}
+
+.space {
+    display: flex;
+    justify-content: center;
 }

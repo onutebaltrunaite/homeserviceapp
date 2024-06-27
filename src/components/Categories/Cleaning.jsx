@@ -1,11 +1,11 @@
 import React from 'react';
-import './Category.css'; // You can create this CSS file for styling
+import styles from './Category.module.scss'; 
 
 const Cleaning = () => {
     return (
-        <div className="category">
-            <img src="https://img.icons8.com/?size=100&id=12238&format=png&color=000000" className="category-icon"></img>            
-            <h4 className="category-title">Cleaning Services</h4>
+        <div className={styles.category}>
+            <img src="https://img.icons8.com/?size=100&id=12238&format=png&color=000000" className={styles.categoryIcon} alt="Cleaning Icon"></img>
+            <h4 className={styles.categoryTitle}>Cleaning Services</h4>
         </div>
     );
 };

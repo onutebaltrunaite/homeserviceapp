@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs'; 
 import Services from './pages/Services';
+import Login from './pages/Login';
 
 function App() {
   const handleSearch = (query) => {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home handleSearch={handleSearch} />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>

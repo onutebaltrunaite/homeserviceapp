@@ -1,5 +1,5 @@
 import React from 'react';
-import './CategoryCard.css'; // Assuming you have a CSS file for styling
+import styles from './CategoryCard.module.scss'; // Assuming you have a CSS file for styling
 import Plumbing from '../Categories/Plumbing'; // Importing component for Plumbing
 import Electric from '../Categories/Electric'; // Importing component for Electric
 import Cleaning from '../Categories/Cleaning'; // Importing component for Cleaning
@@ -19,7 +19,7 @@ const categories = [
 
 const CategoryCard = () => {
   return (
-    <div className="category-card"> {/* Assuming you apply styles directly via className */}
+    <div className={styles.categoryCard}> {/* Assuming you apply styles directly via className */}
       {categories.map((category, index) => (
         renderCategory(category.title, index)
       ))}
