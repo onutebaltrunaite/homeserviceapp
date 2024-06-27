@@ -1,8 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './NavBar.module.scss';
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarLogo}>
@@ -19,8 +25,8 @@ const NavBar = () => {
           <Link to="/aboutus">About Us</Link>
           <Link to="/services">Services</Link>
         </div>
-        <div className={`${styles.navbarLinks} ${styles.navbarLogin}`}>
-          <Link to="/login">Login</Link>
+        <div className={styles.navbarLinks}>
+          <button onClick={handleLogin}>Login/Signup</button>
         </div>
       </div>
     </nav>
