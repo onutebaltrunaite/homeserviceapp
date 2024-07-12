@@ -10,7 +10,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs'; 
 import Services from './pages/Services';
 import Login from './pages/Login';
-import Register from './pages/Register.jsx';
+import Register from './pages/Register';
 
 function App() {
   const handleSearch = (query) => {
