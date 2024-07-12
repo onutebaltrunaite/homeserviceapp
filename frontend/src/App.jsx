@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs'; 
 import Services from './pages/Services';
 import Login from './pages/Login';
+import Register from './pages/Register.jsx';
 
 function App() {
   const handleSearch = (query) => {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
     </Router>
