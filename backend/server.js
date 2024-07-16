@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const usersRoute = require('./routes/registerUser');
+const loginRoute = require('./routes/loginUser'); // Import login route
 const connectDB = require('./config/db');
 
 dotenv.config();
@@ -17,6 +18,7 @@ connectDB();
 
 // Routes
 app.use('/api/users', usersRoute);
+app.use('/api/users', loginRoute); // Use the login route
 
 // Start the server
 const PORT = process.env.PORT || 5000;

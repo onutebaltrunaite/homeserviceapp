@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 // Route to handle user registration
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
-    // Log the request body to see if name is included
-    console.log(req.body);
+  
+  // Log the request body to see if name is included
+  console.log(req.body);
 
   try {
     // Check if user already exists
@@ -37,5 +39,6 @@ router.post('/register', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
 
 module.exports = router;
