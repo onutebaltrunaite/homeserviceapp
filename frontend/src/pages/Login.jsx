@@ -13,8 +13,10 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:5000/api/users/login', { email, password }); // Adjusted endpoint
+    
       localStorage.setItem('token', res.data.token); // Store the JWT token in localStorage
-      navigate('/dashboard'); // Redirect on successful login
+
+      navigate('/'); // Redirect on successful login
     } catch (err) {
       setError('Invalid email or password');
     }

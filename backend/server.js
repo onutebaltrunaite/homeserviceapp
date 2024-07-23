@@ -1,9 +1,11 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const usersRoute = require('./routes/registerUser');
 const loginRoute = require('./routes/loginUser'); // Import login route
+const protectedRoute = require('./routes/protectedRoute');
 const connectDB = require('./config/db');
 
 dotenv.config();
@@ -12,6 +14,7 @@ const app = express();
 // Middleware
 app.use(express.json()); // Body parser middleware
 app.use(cors());
+app.use(cookieParser());
 
 // Connect to MongoDB
 connectDB();
@@ -19,6 +22,8 @@ connectDB();
 // Routes
 app.use('/api/users', usersRoute);
 app.use('/api/users', loginRoute); // Use the login route
+app.use('/api', protectedRoute);
+
 
 // Start the server
 const PORT = process.env.PORT || 5000;

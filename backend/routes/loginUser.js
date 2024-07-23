@@ -1,5 +1,3 @@
-// routes/loginUser.js
-
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
@@ -23,8 +21,9 @@ router.post('/login', async (req, res) => {
     }
     const isMatch = await bcrypt.compare(password, user.password);
 
-    console.log('Stored Password:', user.password);  // Log stored hashed password
-    console.log('Entered Password:', password);  // Log entered plain password
+    console.log('Stored Password:', user.password);  
+    console.log('Entered Password:', password);
+    console.log("User name:", user.name);
 
     console.log("Passwords match? >>>>", isMatch);
     if (!isMatch) {
@@ -36,6 +35,7 @@ router.post('/login', async (req, res) => {
     const payload = {
       user: {
         id: user.id,
+        name: user.name,
       },
     };
 
@@ -48,6 +48,7 @@ router.post('/login', async (req, res) => {
         res.json({ token });
       }
     );
+    
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server error');

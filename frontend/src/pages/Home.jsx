@@ -4,11 +4,13 @@ import CategoryCard from '../components/CategoryCard/CategoryCard.jsx';
 
 // import CategoryList from "@/components/home/CategoryList";
 import BusinessList from "../home/BusinessList";
+import Dashboard from '../components/Dashboard/Dashboard.jsx';
 
 const Home = ({ handleSearch }) => {
   return (
     <div>
       <SearchBar onSearch={handleSearch} />
+      <Dashboard/>
       <div>Layout'as</div>
       <CategoryCard />
       <BusinessList />
