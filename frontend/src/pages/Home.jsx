@@ -9,9 +9,9 @@ import Dashboard from '../components/Dashboard/Dashboard.jsx';
 const Home = ({ handleSearch }) => {
   return (
     <div>
-      <SearchBar onSearch={handleSearch} />
       <Dashboard/>
-      <div>Layout'as</div>
+      <SearchBar onSearch={handleSearch} />
+       <div>Layout'as</div>
       <CategoryCard />
       <BusinessList />
     </div>

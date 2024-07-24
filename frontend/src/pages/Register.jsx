@@ -15,7 +15,7 @@ const Register = () => {
     try {
       const res = await axios.post('http://localhost:5000/api/users/register/', { name, email, password });
       localStorage.setItem('token', res.data.token); // Store the JWT token in localStorage
-      navigate('/dashboard'); // Redirect on successful registration
+      navigate('/login'); // Redirect on successful registration
     } catch (err) {
       setError('Error during registration');
     }

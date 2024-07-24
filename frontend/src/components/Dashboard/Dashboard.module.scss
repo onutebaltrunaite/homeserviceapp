@@ -1,0 +1,55 @@
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 100vh;
+    text-align: center;
+  }
+  
+  .userContainer {
+    position: relative; /* Ensure the dropdown is positioned relative to the container */
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff; // Example background color
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    cursor: pointer; /* Indicate that the avatar is clickable */
+  }
+  
+  .dropdown {
+    position: absolute; /* Position the dropdown relative to the container */
+    top: 50px; /* Adjust as needed to position the dropdown below the avatar */
+    right: 0; /* Align the dropdown to the right edge of the container */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure the dropdown appears above other elements */
+  }
+  
+  .dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dropdown li {
+    padding: 10px;
+    cursor: pointer; /* Indicate that the items are clickable */
+  }
+  
+  .dropdown li:hover {
+    background-color: #f0f0f0; /* Highlight the item on hover */
+  }
+  
