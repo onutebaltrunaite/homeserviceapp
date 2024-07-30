@@ -1,5 +1,3 @@
-// Hello from the other side
-
 import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
@@ -11,6 +9,9 @@ import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import MyAccount from './components/MyAccount/MyAccount.jsx';
+import ProtectedRoute from './components/ProtectedRoute';
+
 
 function App() {
   const handleSearch = (query) => {
@@ -27,6 +28,14 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
+          <Route path="/my-account" element={
+            <ProtectedRoute>
+              <MyAccount />
+            </ProtectedRoute>
+            } />
+          
+
         </Routes>
       </div>
     </Router>

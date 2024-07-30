@@ -74,3 +74,58 @@ exports.login = async (req, res) => {
     res.status(500).send('Server error');
   }
 };
+
+// for my account page
+
+// Get user details
+exports.getUserDetails = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password');
+    res.json(user);
+  } catch (err) {
+    res.status(500).send('Server Error');
+  }
+};
+
+// Update user details
+exports.updateUserDetails = async (req, res) => {
+  const { name, email, phone, city } = req.body;
+
+  try {
+    const user = await User.findById(req.user.id);
+
+    if (user) {
+      user.name = name || user.name;
+      user.email = email || user.email;
+      user.phone = phone || user.phone;
+      user.city = city || user.city;
+
+      await user.save();
+      res.json(user);
+    } else {
+      res.status(404).json({ msg: 'User not found' });
+    }
+  } catch (err) {
+    res.status(500).send('Server Error');
+  }
+};
+
+// Update password
+exports.updatePassword = async (req, res) => {
+  const { oldPassword, newPassword } = req.body;
+
+  try {
+    const user = await User.findById(req.user.id);
+
+    if (user && (await bcrypt.compare(oldPassword, user.password))) {
+      const salt = await bcrypt.genSalt(10);
+      user.password = await bcrypt.hash(newPassword, salt);
+      await user.save();
+      res.json({ msg: 'Password updated successfully' });
+    } else {
+      res.status(400).json({ msg: 'Incorrect old password' });
+    }
+  } catch (err) {
+    res.status(500).send('Server Error');
+  }
+};

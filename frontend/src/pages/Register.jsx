@@ -60,6 +60,9 @@ const Register = () => {
           <button type="submit" className={styles.registerButton}>Register</button>
         </div>
       </form>
+      <p className={styles.loginPrompt}>
+        Already a member? <span onClick={() => navigate('/login')} className={styles.loginLink}>Log in</span>.
+      </p>
     </div>
   );
 };

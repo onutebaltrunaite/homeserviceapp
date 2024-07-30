@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Login.module.scss';
+import Cookies from 'js-cookie';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -14,16 +15,17 @@ const Login = () => {
     try {
       const res = await axios.post('http://localhost:5000/api/users/login', { email, password }); // Adjusted endpoint
     
-      localStorage.setItem('token', res.data.token); // Store the JWT token in localStorage
+      // Store the JWT token in a cookie
+      Cookies.set('token', res.data.token, { expires: 1 });
 
-      navigate('/'); // Redirect on successful login
+      navigate('/'); 
     } catch (err) {
       setError('Invalid email or password');
     }
   };
 
   const handleSignup = () => {
-    navigate('/register'); // Redirect to the signup page
+    navigate('/register'); 
   };
 
   return (
