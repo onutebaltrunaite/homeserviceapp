@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './MyAccount.module.scss';
+import { jwtDecode} from 'jwt-decode';
+import Cookies from 'js-cookie';
 
 
 const MyAccount = () => {
-  const [user, setUser] = useState({ name: '', email: '', phone: '', city: '' });
+  const [user, setUser] = useState({ id:'', name: '', email: '' });
   const [newPassword, setNewPassword] = useState('');
   const [oldPassword, setOldPassword] = useState('');
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    // Fetch user details
     const fetchUserDetails = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/users/me', { withCredentials: true });
-        setUser(res.data);
+        const token = Cookies.get('token');
+        if (token) {
+          const decodedToken = jwtDecode(token);
+          const userId = decodedToken.user.id;
+          const res = await axios.get('http://localhost:5000/api/users/me/'+ userId, { withCredentials: true });
+          setUser(res.data);
+        }
+       
       } catch (err) {
         console.error(err);
       }
@@ -31,6 +38,7 @@ const MyAccount = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
+      console.log("user to update: ",user);
       const res = await axios.put('http://localhost:5000/api/users/me', user, { withCredentials: true });
       setUser(res.data);
       setMessage('User details updated successfully');
@@ -62,14 +70,6 @@ const MyAccount = () => {
         <div className={styles.formGroup}>
           <label htmlFor="email">Email</label>
           <input type="email" id="email" name="email" value={user.email} onChange={handleChange} required />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="phone">Phone</label>
-          <input type="text" id="phone" name="phone" value={user.phone} onChange={handleChange} />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="city">City</label>
-          <input type="text" id="city" name="city" value={user.city} onChange={handleChange} />
         </div>
         {message && <p className={styles.message}>{message}</p>}
         <button type="submit" className={styles.updateButton}>Update Details</button>
