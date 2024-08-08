@@ -7,7 +7,9 @@ const registerUserRoute = require('./routes/registerUser');
 const loginRoute = require('./routes/loginUser'); // Import login route
 const protectedRoute = require('./routes/protectedRoute');
 const connectDB = require('./config/db');
-const userDetailsRoute = require('./routes/userDetails'); // delete if the shit down not correct
+const userDetailsRoute = require('./routes/userDetails');
+const businessDetailsRoute = require('./routes/businessDetails');
+
 
 dotenv.config();
 const app = express();
@@ -33,6 +35,8 @@ app.use('/api/users', registerUserRoute);
 app.use('/api/users', loginRoute); // Use the login route
 app.use('/api', protectedRoute);
 app.use('/api/users', userDetailsRoute); // dont know if correct
+app.use('/api/businesses', businessDetailsRoute);
+
 
 // Start the server
 const PORT = process.env.PORT || 5000;

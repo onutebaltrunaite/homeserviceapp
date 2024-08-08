@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './MyAccount.module.scss';
 import { jwtDecode} from 'jwt-decode';
@@ -38,7 +38,6 @@ const MyAccount = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      console.log("user to update: ",user);
       const res = await axios.put('http://localhost:5000/api/users/me', user, { withCredentials: true });
       setUser(res.data);
       setMessage('User details updated successfully');

@@ -28,13 +28,13 @@ export const businesses = [
       ],
     },
     {
-      _id: "662e9ac5c68c09jjj94544549",
+      _id: "662e9ac5c68c09jjj94544550",
       name: "Moki veži",
       about: "Description Two",
       address: "Žemaičių al. 27, Klaipėda",
       category: "shifting",
       contactPerson: "Darius Standys",
-      email: "email2@example.com",
+      email: "email3@example.com",
       images: [
         {
           url: "https://www.vz.lt/apps/pbcsi.dll/storyimage/VZ/20180813/PREMIUM/180819844/AR/0/AR-180819844.jpg?exactW=800&AlignV=middle&imageversion=Horizontalus&lu=1824",

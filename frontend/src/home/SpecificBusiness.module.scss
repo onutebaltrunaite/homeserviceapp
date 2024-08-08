@@ -1,0 +1,47 @@
+.businessContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .businessName {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .businessImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .businessDetails {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .businessAbout {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .businessAddress,
+  .businessCategory,
+  .businessContact,
+  .businessEmail {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  strong {
+    color: #333;
+    font-weight: bold;
+  }
+  

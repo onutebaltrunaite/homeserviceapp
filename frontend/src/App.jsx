@@ -11,7 +11,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import MyAccount from './components/MyAccount/MyAccount.jsx';
 import ProtectedRoute from './components/ProtectedRoute';
-
+import Booking from './components/Booking'; 
+import SpecificBusiness from './home/SpecificBusiness.jsx';
 
 function App() {
   const handleSearch = (query) => {
@@ -22,12 +23,15 @@ function App() {
     <Router>
       <div>
         <NavBar />
+
         <Routes>
+
           <Route path="/" element={<Home handleSearch={handleSearch} />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/business/:id" element={<SpecificBusiness />} />
 
           <Route path="/my-account" element={
             <ProtectedRoute>
@@ -35,6 +39,13 @@ function App() {
             </ProtectedRoute>
             } />
           
+
+          <Route path="/my-bookings" element={
+            <ProtectedRoute>
+              <Booking />
+            </ProtectedRoute>
+            } />
+
 
         </Routes>
       </div>

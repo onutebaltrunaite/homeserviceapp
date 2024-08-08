@@ -10,7 +10,6 @@ const Home = ({ handleSearch }) => {
   return (
     <div>
       <SearchBar onSearch={handleSearch} />
-       <div>Layout'as</div>
       <CategoryCard />
       <BusinessList />
     </div>
