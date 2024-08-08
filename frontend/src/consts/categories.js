@@ -1,7 +1,7 @@
 export const categories = [
     {
         _id: "1",
-        name: "Cleaning",
+        name: "cleaning",
         description: "Cleaning Services",
         images: [
           {
@@ -11,7 +11,7 @@ export const categories = [
       },
       {
         _id: "2",
-        name: "Electric",
+        name: "electric",
         description: "Electrical Services",
         images: [
           {
@@ -21,7 +21,7 @@ export const categories = [
       },
       {
         _id: "3",
-        name: "Painting",
+        name: "painting",
         description: "Painting Services",
         images: [
           {
@@ -31,7 +31,7 @@ export const categories = [
       },
       {
         _id: "4",
-        name: "Plumbing",
+        name: "plumbing",
         description: "Plumbing Services",
         images: [
           {
@@ -41,7 +41,7 @@ export const categories = [
       },
       {
         _id: "5",
-        name: "Repair",
+        name: "repair",
         description: "Repair Services",
         images: [
           {
@@ -51,7 +51,7 @@ export const categories = [
       },
       {
         _id: "6",
-        name: "Shifting",
+        name: "shifting",
         description: "Shifting Services",
         images: [
           {
