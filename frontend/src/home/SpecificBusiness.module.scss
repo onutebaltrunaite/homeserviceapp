@@ -1,47 +1,202 @@
+// // .businessContainer {
+// //     max-width: 800px;
+// //     margin: 0 auto;
+// //     padding: 20px;
+// //     background-color: #f9f9f9;
+// //     border-radius: 8px;
+// //     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+// //   }
+  
+// //   .businessName {
+// //     font-size: 2rem;
+// //     color: #333;
+// //     margin-bottom: 20px;
+// //     text-align: center;
+// //   }
+  
+// //   .businessImage {
+// //     width: 100%;
+// //     height: auto;
+// //     border-radius: 8px;
+// //     margin-bottom: 20px;
+// //   }
+  
+// //   .businessDetails {
+// //     font-size: 1rem;
+// //     color: #555;
+// //   }
+  
+// //   .businessAbout {
+// //     font-size: 1.2rem;
+// //     color: #666;
+// //     margin-bottom: 20px;
+// //   }
+  
+// //   .businessAddress,
+// //   .businessCategory,
+// //   .businessContact,
+// //   .businessEmail {
+// //     margin-bottom: 10px;
+// //     line-height: 1.6;
+// //   }
+  
+// //   strong {
+// //     color: #333;
+// //     font-weight: bold;
+// //   }
+  
+
+
+
+
+// /* SpecificBusiness.module.scss */
+
+// .businessContainer {
+//     max-width: 800px;
+//     margin: 40px auto;
+//     padding: 20px;
+//     background-color: #fff;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     border-radius: 8px;
+//     text-align: center;
+// }
+
+// .businessImage {
+//     width: 100%;
+//     max-height: 400px;
+//     object-fit: cover;
+//     border-radius: 8px;
+//     margin-bottom: 20px;
+// }
+
+// .businessName {
+//     font-size: 2em;
+//     color: #333;
+//     margin-bottom: 10px;
+//     text-transform: uppercase;
+//     letter-spacing: 1.5px;
+// }
+
+// .businessDetails {
+//     margin: 20px 0;
+//     text-align: left;
+// }
+
+// .businessDetails p {
+//     font-size: 1em;
+//     color: #666;
+//     line-height: 1.6;
+//     margin: 10px 0;
+// }
+
+// .businessAbout {
+//     font-style: italic;
+//     color: #444;
+// }
+
+// .businessAddress,
+// .businessCategory,
+// .businessContact,
+// .businessEmail {
+//     font-weight: 500;
+// }
+
+// strong {
+//     color: #333;
+// }
+
+// button {
+//     margin-top: 20px;
+// }
+
+
+
+/* SpecificBusiness.module.scss */
+
 .businessContainer {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .businessName {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #fff3e0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
     text-align: center;
-  }
-  
-  .businessImage {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+    border: 2px solid #ffcc80;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.businessImage {
+    width: 60%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
     margin-bottom: 20px;
-  }
-  
-  .businessDetails {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .businessAbout {
-    font-size: 1.2rem;
-    color: #666;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.businessImage:hover {
+    transform: scale(1.05);
+}
+
+.businessName {
+    font-size: 2.5em;
+    color: #2e7d32;
     margin-bottom: 20px;
-  }
-  
-  .businessAddress,
-  .businessCategory,
-  .businessContact,
-  .businessEmail {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: linear-gradient(90deg, #7b1fa2, #d81b60);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.businessDetails {
+    margin: 25px 0;
+    text-align: left;
+    width: 80%;
+}
+
+.businessDetails p {
+    font-size: 1.2em;
+    color: #37474f;
+    line-height: 1.8;
+    margin: 12px 0;
+}
+
+.businessAbout {
+    font-style: italic;
+    color: #3e2723;
+    margin-bottom: 20px;
+}
+
+.businessAddress,
+.businessCategory,
+.businessContact,
+.businessEmail {
+    font-weight: 600;
+    color: #bf360c;
     margin-bottom: 10px;
-    line-height: 1.6;
-  }
-  
-  strong {
-    color: #333;
-    font-weight: bold;
-  }
-  
+}
+
+strong {
+    color: #ff7043;
+}
+
+button {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff7043, #d84315);
+}
